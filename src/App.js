@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PhotoCard from './PhotoCard';
 import "./App.css";
+import "./App.scss";
 
-const appStyle = {background: 'lightBlue', minHeight: '1vh'};
+// const appStyle = {background: 'lightBlue', minHeight: '1vh'};
 
 function App() {
   const [data, setData] = useState({});
@@ -16,10 +17,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App" style={appStyle}>
+    // <div className="App" style={appStyle}>
+      <div className="App">
       <PhotoCard  title={data.title}
                   url={data.url}
-                  explanation={data.explanation}/>
+                  explanation={data.explanation}
+                  copyright={data.copyright}/>
     </div>
   );
 }
