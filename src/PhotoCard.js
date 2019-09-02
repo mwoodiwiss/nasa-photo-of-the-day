@@ -1,5 +1,6 @@
 import React from "react";
 import "./PhotoCard.scss";
+import { fluidCard } from 'semantic-ui-react';
 
 // const divStyle = {
 //     margin: 'auto',
@@ -48,18 +49,24 @@ import "./PhotoCard.scss";
 
 function PhotoCard(props) {
   return (
-      <div className='photo-card'>
+      <fluidCard className='photo-card'>
+        <div class="ui raised segment">
           <h1 className='title'>NASA's Daily Photo</h1>
-          <img className='image' src={props.url} alt='NASA image of the day'/>
+          <div class="ui divider"></div>
+          <img className='ui centered large rounded image' src={props.url} alt='NASA image of the day'/>
+          <div class="ui divider"></div>
           <div className='text'>
               <h2 className='title-text'>{props.title}</h2>
-              <h3 className='text-content'>{props.explanation}</h3>
+              <div class="ui segment">
+                <p>{props.explanation}</p>
+              </div>
               <a href={props.url} >View source</a>
           </div>
           <footer> 
               <p>{'Copyright: '+props.copyright}</p>
           </footer>
-      </div>
+          </div>
+      </fluidCard>
   );
 }
 
